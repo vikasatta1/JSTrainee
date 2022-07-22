@@ -17,4 +17,7 @@ console.log('lesson 3');
 
 
 // just a plug
-export default ()=>{};
+
+export const lala = () => {
+
+}

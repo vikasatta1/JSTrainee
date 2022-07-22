@@ -22,6 +22,8 @@ export const ChangeActionAC = (isBuying: boolean) => {
         type: ACTIONS_TYPE.CHANGE_CHANGE_ACTION,
         payload: {
             isBuying,
+            amountOfBYN:'',
+            amountOfCurrency:'',
         }
     } as const
 };
@@ -32,6 +34,8 @@ export const СhangeCurrentCurrencyAC = (currentCurrency: string) => {
         type: ACTIONS_TYPE.CHANGE_CURRENT_CURRENCY,
         payload: {
             currentCurrency,
+            amountOfBYN:'',
+            amountOfCurrency:'',
         }
     } as const
 };
