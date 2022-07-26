@@ -70,7 +70,7 @@ function makeCounter(n: number) {
         count = 0
     }
     //@ts-ignore
-    this.set = function (num:number) {
+    this.set = function (num: number) {
         count = num
     }
 
@@ -106,11 +106,12 @@ function superSum(n: number) {
 //1
 //@ts-ignore
 
-function pow(x,y){
-    if(y==1)return x
-    return x * pow(x,y-1)
+function pow(x, y) {
+    if (y == 1) return x
+    return x * pow(x, y - 1)
 }
-console.log(pow(2,6))
+
+console.log(pow(2, 6))
 
 // Task 06
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину.
@@ -124,3 +125,52 @@ const makeFlat = function (arr: any) {
 // just a plug
 export default () => {
 };
+
+
+const tree = {
+    value: 5,
+    children: [{
+        value: 5,
+        children: null
+    },
+        {
+            value: 3,
+            children: null
+        },
+        {
+            value:6,
+            children: null
+        },
+        {
+            value: 9,
+            children: null
+        }, {
+            value: 1,
+            children: null
+        },
+        {
+            value: 6,
+            children: [{
+                value: 1,
+                children: null
+            },
+                {
+                    value: 0,
+                    children: null}]}
+    ]
+}
+
+const treeSum = (tree:any) =>{
+let sum = 0
+    //@ts-ignore
+    if(!children){
+        return tree.value
+    } else{
+        //@ts-ignore
+        children.forEach(subtree => {
+           sum += treeSum(subtree)
+        })
+    }
+
+    return sum
+}
