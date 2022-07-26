@@ -53,28 +53,30 @@ console.log(counter()); // 3*/
 // decrease: -1
 // reset: установить счетчик в 0;
 // set: установить счетчик в заданное значение;
-/*
-function makeCounter(num:number) {
-    let startCount = num
-    //@ts-ignore
-  this.increase = function (){
-     return  ++startCount
-   }
-    //@ts-ignore
-    this.decrease = function (){
-        return  --startCount
-    }
-    //@ts-ignore
-    this.reset = function (){
-        return  startCount=0
-    }
-    //@ts-ignore
-    this.set = function (numSet:number){
-        return   startCount=numSet
-    }
 
+
+function makeCounter(n: number) {
+    let count = 0
+    //@ts-ignore
+    this.increase = function () {
+        ++count
+    }
+    //@ts-ignore
+    this.decrease = function () {
+        --count
+    }
+    //@ts-ignore
+    this.reset = function () {
+        count = 0
+    }
+    //@ts-ignore
+    this.set = function (num:number) {
+        count = num
+    }
 
 }
+
+/*
 //@ts-ignore
 let count = new makeCounter(7)
 console.log(count.increase())
@@ -82,13 +84,14 @@ console.log(count.decrease())
 console.log(count.increase())
 */
 
-        // Task 04*
+// Task 04*
 // Реализовать функцию superSum которая принимает число в качестве аргумента, которое указывает на количество слагаемых
 // и что бы корректно работали следующие вызовы:
-function superSum(n:number){
-if(n===0) return 0
-    if(n===1) return (num:number)=>num
+function superSum(n: number) {
+    if (n === 0) return 0
+    if (n === 1) return (num: number) => num
 }
+
 // 1) superSum(0) //0
 // 2) superSum(3)(2)(5)(3) //10
 // 3) superSum(3)(2)(5,3) //10
@@ -100,15 +103,24 @@ if(n===0) return 0
 
 // Task 05
 // решить все задачи по рекурсии которые даны в конце статьи https://learn.javascript.ru/recursion
+//1
+//@ts-ignore
+
+function pow(x,y){
+    if(y==1)return x
+    return x * pow(x,y-1)
+}
+console.log(pow(2,6))
 
 // Task 06
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину.
-const makeFlat = function(arr:any) {
-    return arr.reduce(function(a:any, c:any) {
+const makeFlat = function (arr: any) {
+    return arr.reduce(function (a: any, c: any) {
         let v = c instanceof Array ? makeFlat(c) : c;
         return a.concat(v)
     }, [])
 }
 
 // just a plug
-export default () => {};
+export default () => {
+};
