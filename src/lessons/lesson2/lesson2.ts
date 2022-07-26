@@ -163,14 +163,11 @@ const tree = {
 const treeSum = (tree:any) =>{
 let sum = 0
     //@ts-ignore
-    if(!children){
-        return tree.value
-    } else{
+    if(children){
         //@ts-ignore
         children.forEach(subtree => {
-           sum += treeSum(subtree)
+            sum += treeSum(subtree)
         })
     }
-
     return sum
 }
