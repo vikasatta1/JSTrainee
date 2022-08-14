@@ -21,30 +21,51 @@ console.log('lesson 2');
 // https://www.youtube.com/watch?v=Kuq6oIN3PH0
 
 
-// Task 01
-// Реализовать функцию sum которая суммирует 2 числа следующим образом sum(3)(6) === 9
-/*const sum =(num:number)=>{
-    return function (num2:number){
-        console.log(num+num2)
+/*function zam(){
+    let count = 0
+   return function sum(){
+        count++
+        console.log(count)
     }
 }
-sum(2)(5)*/
+let count = zam()
+count()
+count()
+count()
+let count2 = zam()
+count2()
+count2()
+count2()
+count2()*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Task 01
+// Реализовать функцию sum которая суммирует 2 числа следующим образом sum(3)(6) === 9
+
 
 // Task 02
 // Реализовать функцию makeCounter которая работает следующим образом:
-/*const makeCounter = () => {
-    let count = 0
-    return ()=>{
-       return  ++count
-    }
-}
- const counter = makeCounter();
+
+/* const counter = makeCounter();
 console.log(counter()) // 1
 console.log(counter()) // 2
 
  const counter2 = makeCounter();
 console.log(counter2()); // 1
-console.log(counter()); // 3*/
+console.log(counter()); // 3*!/*/
 
 // Task 03
 // Переписать функцию из Task 02 так, что бы она принимала число в качестве аргумента и это число было стартовым значением счетчика
@@ -55,26 +76,26 @@ console.log(counter()); // 3*/
 // set: установить счетчик в заданное значение;
 
 
-function makeCounter(n: number) {
-    let count = 0
-    //@ts-ignore
-    this.increase = function () {
-        ++count
-    }
-    //@ts-ignore
-    this.decrease = function () {
-        --count
-    }
-    //@ts-ignore
-    this.reset = function () {
-        count = 0
-    }
-    //@ts-ignore
-    this.set = function (num: number) {
-        count = num
-    }
-
-}
+// function makeCounter(n: number) {
+//     let count = 0
+//     //@ts-ignore
+//     this.increase = function () {
+//         ++count
+//     }
+//     //@ts-ignore
+//     this.decrease = function () {
+//         --count
+//     }
+//     //@ts-ignore
+//     this.reset = function () {
+//         count = 0
+//     }
+//     //@ts-ignore
+//     this.set = function (num: number) {
+//         count = num
+//     }
+//
+// }
 
 /*
 //@ts-ignore
@@ -87,10 +108,12 @@ console.log(count.increase())
 // Task 04*
 // Реализовать функцию superSum которая принимает число в качестве аргумента, которое указывает на количество слагаемых
 // и что бы корректно работали следующие вызовы:
+/*
 function superSum(n: number) {
     if (n === 0) return 0
     if (n === 1) return (num: number) => num
 }
+*/
 
 // 1) superSum(0) //0
 // 2) superSum(3)(2)(5)(3) //10
@@ -106,26 +129,27 @@ function superSum(n: number) {
 //1
 //@ts-ignore
 
-function pow(x, y) {
+/*function pow(x, y) {
     if (y == 1) return x
     return x * pow(x, y - 1)
 }
 
-console.log(pow(2, 6))
+console.log(pow(2, 6))*/
 
 // Task 06
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину.
-const makeFlat = function (arr: any) {
+/*const makeFlat = function (arr: any) {
     return arr.reduce(function (a: any, c: any) {
         let v = c instanceof Array ? makeFlat(c) : c;
         return a.concat(v)
     }, [])
-}
+}*/
 
 // just a plug
 export default () => {
 };
 
+/*
 
 const tree = {
     value: 5,
@@ -170,4 +194,66 @@ let sum = 0
         })
     }
     return sum
+}*/
+
+
+/*
+function palindrom(str:string){
+   let str2 = str.toLowerCase()
+    return console.log(str2 == str2.split('').reverse().join(''))
 }
+
+palindrom('abba')*/
+
+
+/*const users = [
+    {
+        name: 'vika',
+        age: 20
+    },
+    {
+        name: 'hanna',
+        age: 24
+    },
+
+]
+console.log(users.sort((u1,u2):any=>u2.age - u1.age))
+console.log(users.sort((u1,u2):any=>
+    u1.name.localeCompare(u2.name)))*/
+//перевернуть массив
+/*const arr = [100, 2, 10, 4, 7, 6, 6]
+console.log([...arr].map(arr.pop,arr))*/
+/*let reversed = []
+for(let i = arr.length - 1 ; i>=0;i--){
+    reversed.push(arr[i])
+}
+console.log(reversed)*/
+//сортировка
+//по возрастанию
+/*console.log(arr.sort((a, b) => a - b))
+//по убыванию
+console.log(arr.sort((a, b) => b - a))*/
+//максимальное значение
+/* let num =0
+for (let i = 0; i < arr.length; i++) {
+    if (num < arr[i]) {
+        num = arr[i]  }}
+console.log(num)*/
+/*let max = arr.reduce((acc,el)=>Math.max(acc,el))
+console.log(max)*/
+
+/*arr.sort((a,b)=>a-b)
+let max = arr[arr.length - 1]
+    console.log(max)*/
+/*console.log(Math.max(...arr))*/
+
+/*let sum = arr.reduce((a,b)=> a + b,0)
+console.log(sum)
+let sum2 = 0
+for(let i = 0; i < arr.length;i++){
+    sum2+=arr[i]
+}
+console.log(sum2)*/
+//фильтрация
+const array = [7,'correct', 0 , false , NaN , '',9]
+console.log(array.filter((el)=> !!el))

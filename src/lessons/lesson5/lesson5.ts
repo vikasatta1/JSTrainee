@@ -25,16 +25,25 @@ console.log('Lesson 5');
 // Дан объект someObj, реализуйте функцию greeting и присвойте ее ключу объекта с аналогичным именем.
 // Функция должна вернуть строку `My name is ${name}. I am ${age}`, где name и age берутся из свойств объекта
 
-type someObjType = {
+/*type someObjType = {
     name: string;
     age: number;
 }
 
-let someObj:someObjType = {
+let someObj:any = {
     name: 'Eugene',
-    age: 32
+    age: 32,
+    greeting:function (){
+        console.log(`My name is ${this.name}. I am ${this.age}`)
+    }
+}//@ts-ignore
+function greeting(){
+    //@ts-ignore
+  console.log(`My name is ${this.name}. I am ${this.age}`)
 }
 
+someObj.greeting = greeting
+someObj.greeting()*/
 // Task 02
 // реализовать счетчик counter в виде объекта со следующими методами:
 // get current count; - выводит текущее значение счетчика
@@ -43,6 +52,10 @@ let someObj:someObjType = {
 // set current count; - принимает и присваивает значение счетчику
 // rest current count - устанавливает значение счетчика равным 0
 // все методы должны ссылаться на сам объект
+
+function counter(){
+
+}
 
 // Task 03
 // переделайте код из Task 02, что бы сработал следующий код:
@@ -54,9 +67,11 @@ let someObj:someObjType = {
 
 // Task 05 есть 2 объекта One и Two. С помощью bind и метода sayHello заставьте поздороваться объект One
 
-let One = {name: 'One'};
-let Two = {name: 'Two', sayHello: function() {console.log(`Hello, my name is ${this.name}`)}};
-
+/*let One = {name: 'One'};
+let Two = {
+    name: 'Two',
+    sayHello: function() {console.log(`Hello, my name is ${this.name}`)}};
+ Two.sayHello.bind(One)()*/
 // Task 06
 // создайте объект helperObj у которого есть следующие методы:
 // changeName - меняет значение у свойства name объекта на полученное значение
@@ -76,7 +91,9 @@ function sumTwoNumbers(a:number,b:number):number {return a + b};
 
 // Реализовать задачи 2-4 из Bind с помощью Call
 
+export const lala = ()=>{
 
+}
 
 // just a plug
 export default () => {};
