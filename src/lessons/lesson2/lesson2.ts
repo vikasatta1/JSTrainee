@@ -257,3 +257,4 @@ console.log(sum2)*/
 //фильтрация
 const array = [7,'correct', 0 , false , NaN , '',9]
 console.log(array.filter((el)=> !!el))
+console.log(array.filter((el)=> !!el))
