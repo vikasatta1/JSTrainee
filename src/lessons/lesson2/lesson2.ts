@@ -1,4 +1,4 @@
-console.log('lesson 2');
+/*console.log('lesson 2');*/
 
 // Lexical environment
 // http://jsflow.org/docs/lex-env/
@@ -255,6 +255,7 @@ for(let i = 0; i < arr.length;i++){
 }
 console.log(sum2)*/
 //фильтрация
+/*
 const array = [7,'correct', 0 , false , NaN , '',9]
 console.log(array.filter((el)=> !!el))
-console.log(array.filter((el)=> !!el))
+*/
