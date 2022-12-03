@@ -1,28 +1,105 @@
-interface User{
-    name:string
-    age:number
-}
+console.log('kobeza')
 export const jhon = {
     name: "Jhon",
     age: 23
 }
+/*interface User{
+    name:string
+    age:number
+}*/
+
+/*
+
 const bob = {
     name: "Bob",
     age: 45
 }
 
 
+*/
+
+// после свойств ; после методов ничего
+/*class User {
+    name: string | undefined;
+    age: number | undefined;
+
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+    }
+
+    showUserInfo() {
+        console.log(`Name: ${this.name}; Age: ${this.age}`)
+    }
+}
+
+class Manager extends User {
+    role;
+
+    constructor(name: string, age: number) {
+        super(name, age);
+        this.role = 'Manager';
+    }
+
+    showUserInfo() {
+        console.log('I am manager!')
+        super.showUserInfo()//вызываем родительский метод
+    }
+
+    deleteUser(id: string) {
+
+    }
+}
+
+const Bob = new User("Bob", 23)
+
+console.log(Object.getPrototypeOf(Bob) === User.prototype) //true
+
+function bla(obj: any) {
+    if (obj instanceof User) {
+        console.log('true instanceOf')
+    }
+}
+
+bla(Bob)*/
+
+function User(name:string,age:number){
+    //@ts-ignore
+    this.name = name;
+    //@ts-ignore
+    this.age = age;
+    //@ts-ignore
+    return this;
+}
+/*User.call({}, 'jhon',23)
+User.apply({}, ['jhon',23])*/
+/*Usesr.prototype*/ // {__proto__:Object.prototype, constructor }
+
+
+
+
 
 
 
 //ООП
+
 //string.capitalize
 // Необходимо добавить все строкам в JavaScript метод capitalize, который делает первую букву в строке заглавной
+//@ts-ignore
+String.prototype.capitalize = function () {
+    let str = this
+    return str[0].toUpperCase() + str.slice(1)
+}
 
-//"foo".capitalize() // Foo
+// @ts-ignore
+"foo".capitalize() // Foo
+
 //array.filterMap
 // Необходимо добавить все массивам в JavaScript метод filterMap, который принимает 2 функции: фильтр и map
-
+// @ts-ignore
+Array.prototype.filterMap = function (filter,map){
+    let arr = this
+}
 // [9, 16]
 //    [1, 2, 3, 4].filterMap((el) => el > 2, (el) => el ** 2);
 //Кастомный toString

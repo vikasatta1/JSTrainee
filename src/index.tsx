@@ -7,6 +7,7 @@ import { store } from './redux/state';
 import {lala} from "./lessons/lesson5/lesson5";
 import {jhon} from "./lessons/lesson6/Kobeza";
 
+
 const sp = jhon
 ReactDOM.render(
     <Provider store={store}>
